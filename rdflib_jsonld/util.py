@@ -25,7 +25,9 @@ def source_to_json(source):
     stream = source.getByteStream()
     try:
         if PY3:
-            return json.load(StringIO(stream.read().decode('utf-8')))
+            #return json.load(StringIO(stream.read().decode('utf-8')))
+            return json.load(StringIO(stream.read()))
+
         else:
             return json.load(stream)
     finally:
